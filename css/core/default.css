@@ -286,7 +286,7 @@ ul.browser-default,
 ul.browser-default li { list-style-type: initial; }
 ul, ol { list-style-position: inside; }
 a {
-  color: #039be5; /* Default link color. This can be overridden using Flavors */
+  color: #0000ee; /* Default link color. This can be overridden using Flavors */
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
