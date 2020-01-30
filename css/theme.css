@@ -17,12 +17,12 @@ p { font-size: 1.1em }
 	background-repeat: repeat;
 	background-size: 10%;
 	background-position: center;
-	min-height: 40vh;
+	min-height: 30vh;
 }
 
 .feature-cover {
 	background-image: url('../assets/images/fun-with-processing.png');
 	background-position: center;
 	background-repeat: repeat-x;
-	min-height: 30vh;
+	min-height: 40vh;
 }
