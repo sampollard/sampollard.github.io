@@ -47,6 +47,13 @@ body {
   -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   /*overflow-x: hidden;*/
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 /* HTML5 display definitions
@@ -61,6 +68,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav,
 section, summary {
   display: block;
+}
+
+.footer {
+  display: block;
+  flex-shrink: 0;
 }
 
 audio, canvas, progress, video {
