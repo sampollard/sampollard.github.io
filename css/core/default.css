@@ -170,9 +170,14 @@ pre { overflow: auto; }
 code, kbd, pre, samp {
   font-family: monospace, monospace;
   font-size: 1em;
-  display: block;
 }
-code { background: #000; color: #00ff00; }
+
+code {
+	display: inline-block;
+	background: #c0c0c0; /* silver */
+	color: #7b1fa2; /* eggplant */
+}
+kbd, pre, samp { display: block;}
 
 /* Forms
    ========================================================================== */
