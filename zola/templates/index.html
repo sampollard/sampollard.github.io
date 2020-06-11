@@ -1,40 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-	<title>Samuel D. Pollard's blog</title>
-	<meta name="description" content="Professional web page for Samuel Pollard">
-	<meta name="keywords" content="Sam Pollard, Samuel Pollard, Samuel D. Pollard, computer science, HPC, graph, formal methods, binary analysis">
-	<meta name="author" content="Samuel D. Pollard / Original design: http://brutalistframework.com">
-	<!-- Twitter Card data -->
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@samdpollard">
-	<meta name="twitter:title" content="Samuel D. Pollard">
-	<meta name="twitter:description" content="Professional Twitter account for Samuel D. Pollard.">
-	<!-- Twitter Summary card images must be at least 120x120px -->
-	<meta name="twitter:image" content="assets/images/me_1000.jpg">
+{% extends "base.html" %}
 
-	<!-- Open Graph data -->
-	<meta property="og:title" content="Coquet: A blog about getting a PhD" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://sampollard.github.io" />
-	<meta property="og:image" content="https://sampollard.github.io/assets/images/me_france_1080.jpg" />
-	<meta property="og:description" content="A blog and professional website for Samuel Pollard" />
-	<meta property="og:site_name" content="Samuel Pollard's webpage" />
-
-	<!-- Icons --> <!-- TODO: FIX -->
-	<!-- <link rel="shortcut icon" href="assets/icons/bf44.png" type="image/x-icon" /> -->
-	<!-- <link rel="icon" href="assets/icons/bf15.ico" type="image/x-icon" /> -->
-	<!-- <link rel="apple-touch-icon" href="assets/icons/bf57.png" /> -->
-
-	<!-- CSS  -->
-	<link href="/css/core/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	<link href="/css/theme.css" type="text/css" rel="stylesheet" media="screen,projection" />
-</head>
-<body>
-
-
+{% block content %}
 	<div class="container-fluid no-padding">
 		<div class="row mint">
 			<div class="col-sm-12 no-padding">
@@ -103,19 +69,4 @@
 		</div>
 	</div>
 
-
-
-	<footer class="black">
-		<div class="row">
-			<div class="col-sm-12 no-padding">
-				<small>
-					<p class="center white-text lucida-text">
-							Website created using <a href="http://www.brutalistframework.com" style="color:#add8e6;">Brutalist Framework</a> and <a href="https://www.getzola.org" style="color:#add8e6;">Zola</a>.
-						</p>
-					<p class="center white-text lucida-text">&copy; 2020 <em>Samuel D. Pollard</em>. Website design licensed under the MIT License. All rights reserved for images and blog.</p>
-				</small>
-			</div>
-		</div>
-	</footer>
-<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
-</html>
+{% endblock content %}
