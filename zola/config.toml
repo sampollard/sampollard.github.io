@@ -9,10 +9,13 @@ compile_sass = false
 highlight_code = true
 
 # For syntax themes, see https://www.getzola.org/documentation/getting-started/configuration/
-highlight_theme = "material-light"
+highlight_theme = "gruvbox-light"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+# A list of directories used to search for additional `.sublime-syntax` files.
+extra_syntaxes = ["static/assets/syntaxes/Coq.sublime-syntax"]
 
 [extra]
 # Put all your custom variables here
