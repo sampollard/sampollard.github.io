@@ -76,8 +76,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-9 col-lg-9">
 					<div class="single-col pad50">
-						<div class="tahoma-text charcoal-text">
-							<h3 class="palatino-text heavy black-text">Ltac Adventures</h3>
+						<div class="palatino-text charcoal-text">
+							<h1 class="heavy black-text">Ltac Adventures</h1>
 							<p><p>Ltac is a strange, dynamically typed language used to write tactics in Coq.
 In some sense it's the polar opposite of Coq because of how little is
 typechecked.  Upon first blush, Ltac looks sort of like Gallina, but the
@@ -88,7 +88,7 @@ confusions than it clears up, so I'll be trying to post in more plain English.</
 <p>I'll start with my motivation for developing some proof automation, then go through
 my thought process. Feedback is greatly appreciated but I wanted to present a more
 informal approach since the Ltac manual is not friendly to newcomers.</p>
-<h2 id="spotting-errors">Spotting Errors</h2>
+<h4 id="spotting-errors">Spotting Errors</h4>
 <p>Your most valuable friend when debugging Ltac is <code>idtac</code>, which is the tactic
 that both does nothing and sends a message to the console.</p>
 <p>In my case, I am working with floating point numbers both as bits and as
@@ -98,8 +98,8 @@ may take the form of relations of <code>Z</code>, <code>nat</code>, <code>N</cod
 dealing with bits needs bounds on the number of bits needed to represent a
 number; that way we know no overflow occurs, to name one case.</p>
 <p>For example, suppose you have the following</p>
-<pre style="background-color:#fafafa;">
-<code><span style="color:#80cbc4;">Ltac add_hyp_before_lia A :=
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">Ltac add_hyp_before_lia A :=
   try match goal with
     | [ p1 : positive, p2 : positive |- _ ] =&gt;
         pose proof (A p1)
@@ -111,8 +111,8 @@ number; that way we know no overflow occurs, to name one case.</p>
 the whole match inside a <code>try</code>. But there will not be any indication that
 this tactic inside of <code>try</code> will <em>never</em> work.</p>
 <p>I figured this out by adding the following line:</p>
-<pre style="background-color:#fafafa;">
-<code><span style="color:#80cbc4;">Ltac add_hyp_before_lia A :=
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">Ltac add_hyp_before_lia A :=
   try match goal with
     | [ p1 : positive, p2 : positive |- _ ] =&gt;
 	  idtac &quot;trying to add 2 hypotheses&quot;
@@ -142,5 +142,5 @@ this tactic inside of <code>try</code> will <em>never</em> work.</p>
 			</div>
 		</div>
 	</footer>
-<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+</body>
 </html>

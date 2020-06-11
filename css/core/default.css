@@ -173,9 +173,9 @@ code, kbd, pre, samp {
 }
 
 code {
-	display: inline-block;
+	/* display: inline-block;
 	background: #c0c0c0; /* silver */
-	color: #7b1fa2; /* eggplant */
+	color: #7b1fa2; /* eggplant */ */
 }
 kbd, pre, samp { display: block;}
 

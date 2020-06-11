@@ -1,9 +1,9 @@
 # If you're coming from a new computer, copy css and assets into zola/static
 # before building.
-all :
+build :
 	zola build
 
-deploy :
+deploy : build
 	cp public/index.html ..
 	cp public/robots.txt ..
 	cp public/sitemap.xml ..
