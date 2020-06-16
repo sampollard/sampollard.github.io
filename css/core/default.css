@@ -57,10 +57,16 @@ body {
 }
 
 /* For blog posts, we don't want paragraphs to be blocks because it
- * messes with Zola's typesetting */
-.post {
-  display: inline;
-}
+ * messes with Zola's typesetting. Also, while brutalism is nice
+ * in many cases, their extreme font sizes look a little silly for h1..3 */
+.post p { display: inline; }
+
+.post > h1 { font-size: 2.75em; }
+.post > h2 { font-size: 2.25em; }
+.post > h3 { font-size: 2.0em;  }
+.post > h4 { font-size: 1.75em; }
+.post > h5 { font-size: 1.5em;  }
+.post > h6 { font-size: 1.25em; }
 
 /* HTML5 display definitions
    ========================================================================== */

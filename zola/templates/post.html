@@ -1,24 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-	<div class="no-padding">
-		<div class="row mint">
-			<div class="col-sm-12 no-padding">
-				<div class="black blog-head">
-					<div class="row">
-						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 padding center">
-							<div class="box-shadow-triple vanilla-bean equal-height no-padding">
-								<a href="/index.html">
-									<img class="responsive" src="/assets/images/mylogo.svg" alt="My logo of my intials, SP"/>
-								</a>
-							</div>
+	<div class="row mint">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+			<div class="black blog-head">
+				<div class="row">
+					<div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 padding center">
+						<div class="box-shadow-triple vanilla-bean equal-height no-padding">
+							<a href="/index.html">
+								<img class="responsive" src="/assets/images/mylogo.svg" alt="My logo of my intials, SP"/>
+							</a>
 						</div>
-						<div class="col-xs-7 col-sm-8 col-md-9 col-lg-10">
-							<div class="box-shadow-triple vanilla-bean">
-								<h3 class="palatino-text heavy gray-text black-text-shadow">
-									Coquet: <small><small style="text-shadow: none" > A blog about getting a PhD</small></small>
-								</h3>
-							</div>
+					</div>
+					<div class="col-xs-9 col-sm-10 col-md-10 col-lg-11">
+						<div class="box-shadow-triple vanilla-bean">
+							<h3 class="palatino-text heavy gray-text black-text-shadow">
+								Coquet: <small style="text-shadow: none; white-space: nowrap; font-size: 50%" > A blog about getting a Ph.D.</small>
+							</h3>
 						</div>
 					</div>
 				</div>
@@ -26,24 +24,22 @@
 		</div>
 	</div>
 
-	<div id="academic" class="mint">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div id="academic" class="row mint">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<p class="lucida-text center flow-text black-text">
-				// <a href="../index.html#academic">Academic</a> // Coq // {{ page.title }} //
+				// <a href="../index.html#academic">Academic</a> // {{ page.extra.category }} // {{ page.title }} //
 			</p>
-			</div>
 		</div>
 	</div>
 
 	<div class="vanilla-bean">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12 col-md-9 col-lg-9">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="single-col pad50">
 						<div class="palatino-text charcoal-text">
-							<h1 class="heavy black-text">{{ page.title }}</h1>
 							<div class="post">
+								<h1 class="black-text">{{ page.title }}</h1>
 								{{ page.content | safe }}
 							</div>
 						</div>

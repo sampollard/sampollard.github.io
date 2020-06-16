@@ -2,6 +2,8 @@
 title = "Ltac Adventures"
 date = 2020-06-10
 description = "Ltac is a strange, dynamically typed language..."
+[extra]
+category = "Coq"
 +++
 
 Ltac is a strange, dynamically typed language used to write tactics in Coq.

@@ -2,6 +2,8 @@
 title = "Git Commands I Always Forget"
 date = 2020-06-15
 description = "Git has some of the most unorthogonal syntax..."
+[extra]
+category = "Git"
 +++
 Git has some of the most unorthogonal syntax I've ever used with respect to
 branches.  Sometimes, you delineate branches with spaces, sometimes sometimes
