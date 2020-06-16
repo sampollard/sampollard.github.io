@@ -65,7 +65,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<p class="lucida-text center flow-text black-text">
-				// <a href="../index.html#academic">Academic</a> // Coq // Ltac Adventures //
+				// <a href="../index.html#academic">Academic</a> // Coq // Git Commands I Always Forget //
 			</p>
 			</div>
 		</div>
@@ -77,51 +77,55 @@
 				<div class="col-sm-12 col-md-9 col-lg-9">
 					<div class="single-col pad50">
 						<div class="palatino-text charcoal-text">
-							<h1 class="heavy black-text">Ltac Adventures</h1>
+							<h1 class="heavy black-text">Git Commands I Always Forget</h1>
 							<div class="post">
-								<p>Ltac is a strange, dynamically typed language used to write tactics in Coq.
-In some sense it's the polar opposite of Coq because of how little is
-typechecked.  Upon first blush, Ltac looks sort of like Gallina, but the
-semantics are very different. Here I'm just putting notes together for tips and
-tricks to manage learning it. If you're like me, then the <a href="https://coq.inria.fr/refman/proof-engine/ltac.html">Ltac reference
-manual</a> causes more
-confusions than it clears up, so I'll be trying to post in more plain English.</p>
-<p>I'll start with my motivation for developing some proof automation, then go through
-my thought process. Feedback is greatly appreciated but I wanted to present a more
-informal approach since the Ltac manual is not friendly to newcomers.</p>
-<h4 id="spotting-errors">Spotting Errors</h4>
-<p>Your most valuable friend when debugging Ltac is <code>idtac</code>, which is the tactic
-that both does nothing and sends a message to the console.</p>
-<p>In my case, I am working with floating point numbers both as bits and as
-abstract data types, specifically, those used in Flocq. For these, I need to
-prove a whole slew of rather uninteresting lemmas about numbers. In Coq, these
-may take the form of relations of <code>Z</code>, <code>nat</code>, <code>N</code>, <code>positive</code>s, and since I'm
-dealing with bits needs bounds on the number of bits needed to represent a
-number; that way we know no overflow occurs, to name one case.</p>
-<p>For example, suppose you have the following</p>
+								<p>Git has some of the most unorthogonal syntax I've ever used with respect to
+branches.  Sometimes, you delineate branches with spaces, sometimes sometimes
+you use <code>/</code>, sometimes you put flags inbetween the repository and sometimes you
+don't. So I just write them down here.</p>
+<ul>
+<li>
+<p>Pull from a remote branch</p>
 <pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">Ltac add_hyp_before_lia A :=
-  try match goal with
-    | [ p1 : positive, p2 : positive |- _ ] =&gt;
-        pose proof (A p1)
-      ; pose proof (A p2)
-  end;
-  lia.
-</span></code></pre>
-<p>Do you spot the mistake? There is no semicolon <code>;</code> between the two <code>pose proof</code>s. This means the match tactic will always fail. But since we wrapped
-the whole match inside a <code>try</code>. But there will not be any indication that
-this tactic inside of <code>try</code> will <em>never</em> work.</p>
-<p>I figured this out by adding the following line:</p>
+<code><span style="color:#282828aa;">git checkout --track origin/remotebranch
+</span></code></pre></li>
+<li>
+<p>Push to a remote branch</p>
 <pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">Ltac add_hyp_before_lia A :=
-  try match goal with
-    | [ p1 : positive, p2 : positive |- _ ] =&gt;
-	  idtac &quot;trying to add 2 hypotheses&quot;
-      pose proof (A p1)
-      pose proof (A p2)
-  end;
-  lia.
+<code><span style="color:#282828aa;">git push origin localbranch:remotebranch
+</span></code></pre></li>
+<li>
+<p>Delete remote branch</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">git push origin --delete remotebranch
+</span></code></pre></li>
+<li>
+<p>Delete a tag remotely</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">git push --delete origin 0.7.0
+</span></code></pre></li>
+<li>
+<p>In case you ever mess up and add too many files. Say, you added hundreds of binary files and push,
+so your repository is 10x the size it should be. Even if you remove the folder in the following commit,
+your repo will still have that history. You're rewriting the history books. You can do this with git
+alone, but it's way tougher.</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">git clone --mirror &lt;git URL&gt;
+</span><span style="color:#282828aa;"># Download BFG git cleanup, then run (version number changed, of course)
+</span><span style="color:#282828aa;">java -jar bfg-1.13.0.jar --delete-folders &lt;dirs to delete&gt;
+</span><span style="color:#282828aa;">cd repo.git
+</span><span style="color:#282828aa;">git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive
+</span><span style="color:#282828aa;"># Change so you can push to master on gitlab
+</span><span style="color:#282828aa;">git push
+</span><span style="color:#282828aa;"># IMPORTANT: You want to save the file object-id-map.old-new.txt in the
+</span><span style="color:#282828aa;"># bfg-report so everything gets updated, in say, gitlab. You can find
+</span><span style="color:#282828aa;"># a setting for cleanup under Settings -&gt; Repository -&gt; Cleanup
 </span></code></pre>
+<p><a href="https://docs.gitlab.com/ee/user/project/repository/reducing_the_repo_size_using_git.html">here</a>
+is a doc that explains this for Gitlab.</p>
+</li>
+</ul>
+
 							</div>
 						</div>
 					</div>

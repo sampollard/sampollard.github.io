@@ -56,6 +56,12 @@ body {
   flex: 1 0 auto;
 }
 
+/* For blog posts, we don't want paragraphs to be blocks because it
+ * messes with Zola's typesetting */
+.post {
+  display: inline;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 /**
