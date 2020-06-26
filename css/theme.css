@@ -5,7 +5,7 @@
 .logo { padding: 2em; }
 p { font-size: 1.1em }
 .home-head {
-	background: url('../assets/images/flowers.jpg');
+	background: url('/assets/images/flowers.jpg');
 	background-repeat: no-repeat; 
 	background-size: cover;
 	background-position: center;
@@ -13,7 +13,7 @@ p { font-size: 1.1em }
 }
 
 .blog-head {
-	background: url('../assets/images/perturbation.png');
+	background: url('/assets/images/perturbation.png');
 	background-repeat: repeat;
 	background-size: 10%;
 	background-position: center;
@@ -21,8 +21,8 @@ p { font-size: 1.1em }
 }
 
 .feature-cover {
-	background-image: url('../assets/images/fun-with-processing.png');
+	background-image: url('/assets/images/fun-with-processing.png');
 	background-position: center;
+	background-size: 50%;
 	background-repeat: repeat-x;
-	min-height: 40vh;
 }
