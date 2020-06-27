@@ -24,7 +24,7 @@
 			</div>
 		</div>
 
-		<div id="academic" class="row mint">
+		<div id="Academic" class="row mint">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<p class="lucida-text center flow-text black-text">// Academic //</p>
 			</div>
@@ -50,8 +50,8 @@
 							<ul class="simple-nav">
 								<li><p class="bigger">Sections</p>
 									<ul>
-										<li><a href="#academic">Academic</a></li>
-										<li><a href="#personal">Personal</a></li>
+										<li><a href="#Academic">Academic</a></li>
+										<li><a href="#Personal">Personal</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -68,7 +68,7 @@
 				</div>
 			</div>
 
-			<div id="personal" class="row eggplant">
+			<div id="Personal" class="row eggplant">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<p class="lucida-text center flow-text vanilla-bean-text">// Personal //</p>
 				</div>
@@ -78,10 +78,14 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 						<div class="blocks">
-							<a href="#" class="block b50 charcoal-border border-solid-thin padded blur-hover">
-								<h3 class="lucida-text blue-text flow-text">To be written...</h3>
-								<p class="arial-text"><strong><small>TBD</small></strong></p>
-								<p class="arial-text chop-64">Lorem ipsum no facer prompta vim, movet ubique qui ei. Per no regione aliquid, ea mei nulla scribentur liberavisse.</p>
+							<!-- I can't figure out how to have multiple sections in the same page without also
+                    		     generating another index (I want 2 subsections per index). So my solution is
+							     add the "personal" blog posts manually for now and leave them as orphans. -->
+							{% set page = get_page(path="personal/elementary-math-problem.md") %}
+							<a href="{{ page.permalink | safe }}" class="block b50 charcoal-border border-solid-thin padded blur-hover">
+								<h3 class="lucida-text blue-text flow-text">{{ page.title }}</h3>
+								<p class="arial-text"><strong><small>{{ page.date }}</small></strong></p>
+								<p class="arial-text chop-64">{{ page.description | safe }}</p>
 							</a>
 						</div>
 					</div>

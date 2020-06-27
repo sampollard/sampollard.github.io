@@ -59,7 +59,21 @@ body {
 /* For blog posts, we don't want paragraphs to be blocks because it
  * messes with Zola's typesetting. Also, while brutalism is nice
  * in many cases, their extreme font sizes look a little silly for h1..3 */
-.post p { display: inline; }
+.post {
+	max-width: 640px;
+}
+.post p {
+	display: inline;
+}
+
+.post > code,pre,span {
+	/* On wide screens, it's okay to have code be wider than the text */
+	min-width: calc(75vw)!important;
+}
+
+.post li > * {
+	vertical-align: top;
+}
 
 .post > h1 { font-size: 2.75em; }
 .post > h2 { font-size: 2.25em; }

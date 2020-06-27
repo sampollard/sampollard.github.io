@@ -5,10 +5,11 @@ description = "Git has some of the most unorthogonal syntax..."
 [extra]
 category = "Git"
 +++
+
 Git has some of the most unorthogonal syntax I've ever used with respect to
-branches.  Sometimes, you delineate branches with spaces, sometimes sometimes
-you use `/`, sometimes you put flags inbetween the repository and sometimes you
-don't. So I just write them down here.
+branches.  Sometimes, you delineate branches with spaces, sometimes you use
+`/`, sometimes you put flags inbetween the repository and sometimes you don't.
+So I just write them down here.
 
 - Pull from a remote branch
   ```
@@ -30,9 +31,10 @@ don't. So I just write them down here.
   git push --delete origin 0.7.0
   ```
 
-- In case you ever mess up and add too many files. Say, you added hundreds of binary files and push,
-  so your repository is 10x the size it should be. Even if you remove the folder in the following commit,
-  your repo will still have that history. You're rewriting the history books. You can do this with git
+- In case you ever mess up and add too many files. Say, you added hundreds of
+  binary files and push, so your repository is 10x the size it should be. Even
+  if you remove the folder in the following commit, your repo will still have
+  that history. You're rewriting the history books. You can do this with git
   alone, but it's way tougher.
   ```
   git clone --mirror <git URL>
