@@ -8,6 +8,7 @@ deploy : build
 	cp public/robots.txt ..
 	cp public/sitemap.xml ..
 	cp -r public/blog ..
+	cp -r public/personal ..
 	cp -r public/css ..
 
 .PHONY: clean
