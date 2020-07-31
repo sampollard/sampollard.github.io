@@ -18,18 +18,18 @@ judge it.
 1. `#| |#` - (two way tie) looks weird but easier to type
 1. `{- -}` - (two way tie) good but a little hard to type
 3. `/* */` - only if it's nestable
-4. `--[[ ]]--` - consistent with -- but too many characters
+4. `--[[ ]]--` - consistent with `--` but too many characters
 5. `%{ }%` - easy to change between line and nested, still ugly
 6. `<!-- -->` - Clocking in at a whopping 7 characters, the HTML gets points
   docked for its ridiculous overindulgence. Not to mention its asymmetry.
-7. `(* *)` - Parentheses and askerisks are already the most overused of
+7. `(* *)` - Parentheses and asterisks are already the most overused of
   characters. You have the whole keyboard to work with! Consider the ambiguity
   of parsing something like `(* try (simpl in *) *)`?
 8. `""" """` - is it a string? a comment? who knows??? 
 
 ## Single Line Comments
 1.  `#` - "The comment that will probably work"
-2.  `--`  elegant look but 2nd place because it has 2 characters
+2.  `--` - elegant look but 2nd place because it has two characters
 3.  `;` - feels like you're hacking, good use of homerow
 4.  `//` not bad, but just is a little ostentatious, you know?
 5.  `%` is typeset so many different ways, looks crunched in monospace
