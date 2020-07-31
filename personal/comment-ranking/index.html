@@ -59,81 +59,60 @@
 			</div>
 		</div>
 
-		<div id="Academic" class="row mint">
+		<div id="Personal" class="row mint">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<p class="lucida-text center flow-text black-text">// Academic //</p>
+				<p class="lucida-text center flow-text black-text">
+					// <a href="/blog/index.html#Personal"> Personal </a> // Programming // Ranking Source Code Comment Delimiters //
+				</p>
 			</div>
 		</div>
 
 		<div class="vanilla-bean">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-						<div class="blocks">
-							
-							<a href="https://sampollard.github.io/blog/git-commands-i-always-forget/" class="block b50 charcoal-border border-solid-thin padded blur-hover">
-								<h3 class="lucida-text blue-text flow-text">Git Commands I Always Forget</h3>
-								<p class="arial-text"><strong><small>2020-06-15</small></strong></p>
-								<p class="arial-text chop-64">Git has some of the most unorthogonal syntax...</p>
-							</a>
-							
-							<a href="https://sampollard.github.io/blog/ltac-adventures/" class="block b50 charcoal-border border-solid-thin padded blur-hover">
-								<h3 class="lucida-text blue-text flow-text">Ltac Adventures</h3>
-								<p class="arial-text"><strong><small>2020-06-10</small></strong></p>
-								<p class="arial-text chop-64">Ltac is a strange, dynamically typed language...</p>
-							</a>
-							
-						</div>
-					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="single-col pad50">
+							<div class="palatino-text charcoal-text">
+								<div class="post">
+									<h1 class="black-text">Ranking Source Code Comment Delimiters</h1>
+									<p>I present a definitive ranking of source code comments.  I included some of my
+favorites and least favorites. I rougly went off of the
+<a href="https://www.rosettacode.org/wiki/Comments">Rosetta Code</a> list, but didn't put
+in many of the exotic languages. The ones I did put in were arbitrary, so if
+your favorite language isn't in these rankings please let me know so I can
+judge it.</p>
+<h2 id="multiline-comments">Multiline Comments</h2>
+<ol>
+<li><code>#| |#</code> - (two way tie) looks weird but easier to type</li>
+<li><code>{- -}</code> - (two way tie) good but a little hard to type</li>
+<li><code>/* */</code> - only if it's nestable</li>
+<li><code>--[[ ]]--</code> - consistent with -- but too many characters</li>
+<li><code>%{ }%</code> - easy to change between line and nested, still ugly</li>
+<li><code>&lt;!-- --&gt;</code> - Clocking in at a whopping 7 characters, the HTML gets points
+docked for its ridiculous overindulgence. Not to mention its asymmetry.</li>
+<li><code>(* *)</code> - Parentheses and askerisks are already the most overused of
+characters. You have the whole keyboard to work with! Consider the ambiguity
+of parsing something like <code>(* try (simpl in *) *)</code>?</li>
+<li><code>&quot;&quot;&quot; &quot;&quot;&quot;</code> - is it a string? a comment? who knows??? </li>
+</ol>
+<h2 id="single-line-comments">Single Line Comments</h2>
+<ol>
+<li><code>#</code> - &quot;The comment that will probably work&quot;</li>
+<li><code>--</code>  elegant look but 2nd place because it has 2 characters</li>
+<li><code>;</code> - feels like you're hacking, good use of homerow</li>
+<li><code>//</code> not bad, but just is a little ostentatious, you know?</li>
+<li><code>%</code> is typeset so many different ways, looks crunched in monospace</li>
+<li><code>!</code> - drawing your attention needlessly</li>
+<li><code>&quot;</code> or <code>'</code> - leaves things... <em>shudders</em> unmatched</li>
+<li><code>C</code> - what are we using, punch cards?</li>
+<li><code>dnl</code> - discard to next line, more like discard this comment scheme.</li>
+<li><code>REM</code> - seriously?</li>
+<li><code>⍝</code> - oh, APL.</li>
+</ol>
+<p>Honorable mention goes to: BibTeX where everything is a comment unless you say otherwise.</p>
 
-					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-						<div class="box-shadow-double padded glued carrot">
-							<ul class="simple-nav">
-								<li><p class="bigger">Sections</p>
-									<ul>
-										<li><a href="#Academic">Academic</a></li>
-										<li><a href="#Personal">Personal</a></li>
-									</ul>
-								</li>
-							</ul>
-							<hr class="jagged-rule-dark" />
-							<h5 class="courier-new-text charcoal-text heavy">Topics</h5>
-							<ul class="tags">
-								<li class="box-shadow silver">Coq</li>
-								<li class="box-shadow silver">Formal Methods</li>
-								<li class="box-shadow silver">Floating-Point</li>
-								<li class="box-shadow silver">Philosophy</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div id="Personal" class="row eggplant">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<p class="lucida-text center flow-text vanilla-bean-text">// Personal //</p>
-				</div>
-			</div>
-
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-						<div class="blocks">
-							<!-- I can't figure out how to have multiple sections in the same page without also
-                    		     generating another index (I want 2 subsections per index). So my solution is
-							     add the "personal" blog posts manually for now and leave them as orphans. -->
-							
-							<a href="https://sampollard.github.io/personal/comment-ranking/" class="block b50 charcoal-border border-solid-thin padded blur-hover">
-								<h3 class="lucida-text blue-text flow-text">Ranking Source Code Comment Delimiters</h3>
-								<p class="arial-text"><strong><small>2020-07-30</small></strong></p>
-								<p class="arial-text chop-64">I present a definitive ranking of source code...</p>
-							</a>
-							
-							<a href="https://sampollard.github.io/personal/elementary-math-problem/" class="block b50 charcoal-border border-solid-thin padded blur-hover">
-								<h3 class="lucida-text blue-text flow-text">The Worst Math Problem I Still Remember</h3>
-								<p class="arial-text"><strong><small>2020-06-26</small></strong></p>
-								<p class="arial-text chop-64">Somehow, 20 years later, I find myself thinking...</p>
-							</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
