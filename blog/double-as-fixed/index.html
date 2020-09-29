@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Samuel D. Pollard's blog</title>
+	<meta name="description" content="Professional web page for Samuel Pollard">
+	<meta name="keywords" content="Sam Pollard, Samuel Pollard, Samuel D. Pollard, computer science, HPC, graph, formal methods, binary analysis">
+	<meta name="author" content="Samuel D. Pollard / Original design: http://brutalistframework.com">
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@samdpollard">
+	<meta name="twitter:title" content="Samuel D. Pollard">
+	<meta name="twitter:description" content="Professional Twitter account for Samuel D. Pollard.">
+	<!-- Twitter Summary card images must be at least 120x120px -->
+	<meta name="twitter:image" content="assets/images/me_1000.jpg">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Coquet: A blog about getting a PhD" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://sampollard.github.io" />
+	<meta property="og:image" content="https://sampollard.github.io/assets/images/me_france_1080.jpg" />
+	<meta property="og:description" content="A blog and professional website for Samuel Pollard" />
+	<meta property="og:site_name" content="Samuel Pollard's webpage" />
+
+	<!-- Icons -->
+	<link rel="shortcut icon" href="/assets/images/mylogo.png" type="image/png" />
+	<link rel="icon" href="/assets/images/mylogo.png" type="image/png" />
+	<link rel="apple-touch-icon" href="/assets/images/mylogo.png" type="image/png" />
+
+	<!-- CSS  -->
+	<link href="/css/core/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="/css/theme.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
+
+
+	<div class="container-fluid no-padding" style="width:100%">
+		<div class="row mint">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+				<div class="black blog-head">
+					<div class="row">
+						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 padding center">
+							<div class="box-shadow-triple vanilla-bean equal-height no-padding">
+								<a href="/index.html">
+									<img class="responsive" src="/assets/images/mylogo.svg" alt="My logo of my intials, SP"/>
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-9 col-sm-10 col-md-10 col-lg-10">
+							<div class="box-shadow-triple vanilla-bean">
+								<h3 class="palatino-text heavy gray-text black-text-shadow">
+									<a href="/blog/index.html" style="color:#808080">Coquet:</a> <small style="text-shadow: none; white-space: nowrap; font-size: 50%" > A blog about getting a Ph.D.</small>
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Academic" class="row mint">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p class="lucida-text center flow-text black-text">
+					
+					// <a href="/blog/index.html#Academic">Academic </a> // Floating-Point // Who Needs Floating-Point Anyway? //
+				</p>
+			</div>
+		</div>
+
+		<div class="vanilla-bean">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="single-col pad50">
+							<div class="palatino-text charcoal-text">
+								<div class="post">
+									<h1 class="black-text">Who Needs Floating-Point Anyway?</h1>
+									<p>Suppose we truly want floating point arithmetic free of rounding error. Can we
+do this for all combinations of floating point numbers? Well. Let's for now
+just consider finite arithmetic; that is, neither infinity nor NaN. In this
+case, all we need to do is define the smallest positive floating point number
+as &quot;1&quot;, and shift the decimal point accordingly. According to the IEEE-754
+standard, for double-precision this number is</p>
+<p>2<sup>-1074</sup></p>
+<p>which in binary looks like</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">0 00000000000 0000000000000000000000000000000000000000000000000001
+</span></code></pre>
+<p>To treat this as &quot;1&quot; we must also look at what the largest number is.
+Checking IEEE-754, we have</p>
+<p>2<sup>1023</sup> × (1 + (1 − 2<sup>−52</sup>)), or in bits,</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">0 11111111110 1111111111111111111111111111111111111111111111111111
+</span></code></pre>
+<p>Putting this together, we need to represent a number as large as</p>
+<p>2<sup>1023</sup> × (1 + (1 − 2<sup>−52</sup>)) / (2<sup>−1074</sup>).</p>
+<p>Which, we can calculate with the useful <code>bc</code> (with sufficiently high <code>scale</code>)
+as</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">36385714125121573300846800698456749842842774431060269030973563199251\
+83520276313187422051044619975257814616895952553597550412366074125973\
+05594915359190782200698392412987448013052928786408355279308639946743\
+57611588999020693594474762898847930291552594690170203187215045688094\
+95566077392257613796983034261186022501993558219960112146924922314987\
+24661213715671558623030843303146025660694164325513330061947744775142\
+60351201969859368060220131234488198148976536169638305696900504838830\
+71976087551424621650897680388272858267735217700412928884785446308400\
+63729813907563445195499310977439636039716323348918368319786868700433\
+55177324550146752512
+</span></code></pre>
+<p>So, to fit everything inside a fixed-point value, we need the base-2 logarithm
+of this:</p>
+<pre style="background-color:#fcf0ca;">
+<code><span style="color:#282828aa;">$ bc -l
+scale=60;
+l(2^1023 * (1 + (1 - 2^-52)) * 2^1074)/l(2)
+$ 2097.999999999999999839828674809254106809409981385123854002550379
+</span></code></pre>
+<p>Which is just a tad under 2098 bits. But remember, we need negative numbers as
+well so we need <strong>2099</strong> bits to get the sign for twos-complement. Then, once we
+have some value in fixed-point one can multiply it by 2<sup>-1074</sup> to get
+the correct value. What purpose does this have? For example, the <a href="https://www.mpfr.org/">GNU
+MPFR</a> library has arbitrary-precision floating point values.
+Knowing that we need 2099 bits means we can use any value with at least 2099 bits
+of precision to do any sequence of floating point operations with <em>no error</em>,
+as long as the results are correctly rounded. MPFR is carefully designed to be
+<a href="https://hal.inria.fr/inria-00070266/document">correctly rounded</a>, so that's
+covered for us too!</p>
+
+
+									<center>&#10086;</center>
+									<br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="black">
+		<div class="row">
+			<div class="feature-cover" style="width: 100%; height: 1vh"> </div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 no-padding">
+				<small>
+					<p class="center white-text lucida-text">
+							Website created using <a href="http://www.brutalistframework.com" style="color:#add8e6;">Brutalist Framework</a> and <a href="https://www.getzola.org" style="color:#add8e6;">Zola</a>.
+						</p>
+					<p class="center white-text lucida-text">&copy; 2020 <em>Samuel D. Pollard</em>. Website design licensed under the MIT License. All rights reserved for images and blog.</p>
+				</small>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
