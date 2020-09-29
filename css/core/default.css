@@ -63,7 +63,16 @@ body {
 	max-width: 640px;
 }
 .post p {
-	display: inline;
+	display: inline-block;
+	margin-bottom: 8px;
+}
+
+/* Get the lists to indent past the bullet marks */
+.post ul {
+	list-style-position: outside;
+}
+.post ol {
+	list-style-position: outside;
 }
 
 .post > code,pre,span {
