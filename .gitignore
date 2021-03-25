@@ -1,0 +1,5 @@
+# Vim
+.*.swo
+.*.swp
+zola/public
+zola/static

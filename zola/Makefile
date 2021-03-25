@@ -1,5 +1,6 @@
-# If you're coming from a new computer, copy css and assets into zola/static
-# before building.
+# If you're coming from a new computer, run `make init`
+# Run build to generate.
+# Work inside the zola directory, running zola serve for fast updates
 build :
 	zola build
 
@@ -10,7 +11,14 @@ deploy : build
 	cp -r public/blog ..
 	cp -r public/personal ..
 	cp -r public/css ..
+	cp -r 
 
-.PHONY: clean
+# Run if in a clean directory
+init :
+	mkdir -p static
+	cp -r ../assets static/
+	cp -r ../css static/
+
+.PHONY: clean init build deploy
 clean:
 	$(RM) -r public
