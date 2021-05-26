@@ -10,14 +10,23 @@ deploy : build
 	cp public/sitemap.xml ..
 	cp -r public/blog ..
 	cp -r public/personal ..
+	cp -r public/research ..
 	cp -r public/css ..
-	cp -r 
 
 # Run if in a clean directory
 init :
 	mkdir -p static
 	cp -r ../assets static/
 	cp -r ../css static/
+
+git :
+	git add ../blog
+	git add ../personal
+	git add ../research
+	git add ../css
+	git add ../index.html
+	git add ../robots.txt
+	git add ../sitemap.xml
 
 .PHONY: clean init build deploy
 clean:
