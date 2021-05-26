@@ -11,6 +11,7 @@ deploy : build
 	cp -r public/blog ..
 	cp -r public/personal ..
 	cp -r public/research ..
+	cp -r public/calendar ..
 	cp -r public/css ..
 
 # Run if in a clean directory
@@ -23,6 +24,7 @@ git :
 	git add ../blog
 	git add ../personal
 	git add ../research
+	git add ../calendar
 	git add ../css
 	git add ../index.html
 	git add ../robots.txt
