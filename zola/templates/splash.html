@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container-fluid no-padding vanilla-bean" style="width:100%">
+		<div class="row mint">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+				<div class="black blog-head">
+					<div class="row">
+						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 padding center">
+							<div class="box-shadow-triple vanilla-bean equal-height no-padding">
+								<a href="/index.html">
+									<img class="responsive" src="/assets/images/mylogo.svg" alt="My logo of my intials, SP"/>
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-8 col-sm-6 col-md-6 col-lg-7">
+							<div class="box-shadow-triple vanilla-bean">
+								<h1 class="palatino-text heavy gray-text black-text-shadow center">{{ section.title }}</h1>
+							</div>
+						</div>
+						<div class="col-xs-8 col-sm-4 col-md-3 col-lg-4 padded">
+						<!-- <div class="sticky-cta sticky-top-right stack-top" style="padding: 8px 10px 8px 8px; max-width: 33%;"> -->
+							<div class="box-shadow-double padded peach">
+								<p class="courier-new-text charcoal-text heavy"> Navigation </p>
+								<p class="simple-nav">
+									<a class="invert-hover small-btn" href="/index.html">Home</a> |
+									<a class="invert-hover small-btn" href="/research">Research</a> |
+									<a class="invert-hover small-btn" href="/calendar">Calendar</a>
+								<hr class="jagged-rule-dark" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row padding">
+				<div class="col-sm-12>
+					<div id="main" style="z-index:3">
+						<iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=i2s5a00umod80dajddckc263co%40group.calendar.google.com&amp;color=%23333333&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="700" height="600" frameborder="0" scrolling="no"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock content %}

@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-{% set section = get_section(path="research/_index.md") %}
 	<div class="container-fluid no-padding vanilla-bean" style="width:100%">
 		<div class="row mint">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
 				<div class="black blog-head">
 					<div class="row">
-						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 padding center">
+						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 padding center">
 							<div class="box-shadow-triple vanilla-bean equal-height no-padding">
 								<a href="/index.html">
 									<img class="responsive" src="/assets/images/mylogo.svg" alt="My logo of my intials, SP"/>
@@ -15,29 +14,22 @@
 						</div>
 						<div class="col-xs-8 col-sm-6 col-md-6 col-lg-7">
 							<div class="box-shadow-triple vanilla-bean">
-								<h1 class="palatino-text heavy gray-text black-text-shadow">
-									<a href="research" style="color:#808080">{{ section.title }}</a>
-								</h1>
+								<h1 class="palatino-text heavy gray-text black-text-shadow center">{{ section.title }}</h1>
 							</div>
 						</div>
-						<div class="col-xs-8 col-sm-4 col-md-3 col-lg-3 padded">
-					<!-- <div class="sticky-cta sticky-top-right stack-top" style="padding: 8px 10px 8px 8px; max-width: 33%;"> -->
-							<div class="box-shadow-double padded carrot">
+						<div class="col-xs-8 col-sm-4 col-md-3 col-lg-4 padded">
+							<div class="box-shadow-double padded peach"> 
 								<p class="courier-new-text charcoal-text heavy"> Navigation </p>
 								<p class="simple-nav">
-									<a class="white-text invert-hover small-btn" href="..">Home</a>
-									<hr>
-									<a class="white-text invert-hover small-btn" href="#Conferences">Conferences</a> |
-									<a class="white-text invert-hover small-btn" href="#Workshops">Workshops</a> |
-									<a class="white-text invert-hover small-btn" href="#Journals">Journals</a> |
-									<a class="white-text invert-hover small-btn" href="#Posters">Posters</a> |
-									<a class="white-text invert-hover small-btn" href="#Talks">Talks</a>
+									<a class="invert-hover small-btn" href="..">Home</a> |
+									<a class="invert-hover small-btn" href="research">Research</a> |
+									<a class="invert-hover small-btn" href="../calendar">Calendar</a>
 								<hr class="jagged-rule-dark" />
 								<p class="courier-new-text charcoal-text heavy">Topics</p>
 								<ul class="tags">
 									<li class="box-shadow silver">High-Performance Computing</li>
 									<li class="box-shadow silver">Formal Methods</li>
-									<li class="box-shadow silver">Floating-Point</li>
+									<li class="box-shadow silver">Floating-Point Arithmetic</li>
 								</ul>
 							</div>
 						</div>
@@ -46,7 +38,7 @@
 			</div>
 		</div>
 
-		<div id="Publications" class="row mint">
+		<div id="Publications" class="row seafoam">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<p class="lucida-text flow-text black-text" style="font-size:24pt">// Publications //</p>
 			</div>
@@ -59,7 +51,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
-					<div class="palatino-text charcoal-text padding bib" style="text-indent:-25px">
+					<div class="tahoma-text charcoal-text padding bib" style="text-indent:-25px">
 						<p class="bib">
 						<b>S. D. Pollard</b>, S. Srinivasan, and B. Norris. A Performance and Recommendation System for Parallel Graph Processing Implementations: Work-in-Progress. In <i>The 10th ACM/SPEC International Conference on Performance Engineering Companion</i>, (ICPE ’19), pp. 25–28. Mumbai, India, Apr 2019. ACM. Acceptance Rate: 43% (10/23).
 							<a href="https://dl.acm.org/citation.cfm?id=3313097">[URL]</a>
@@ -84,7 +76,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
-				<div class="palatino-text charcoal-text padding bib" style="text-indent:-25px">
+				<div class="tahoma-text charcoal-text padding bib" style="text-indent:-25px">
 					<p class="bib">
 					<b>S. D. Pollard</b> and B. Norris. A Statistical Analysis of Error in MPI Reduction Operations. In <i>The Fourth International Workshop on Software Correctness for HPC Applications</i> (Correctness), pp. 49–57. Virtual Event, Nov 2020.
 					<br>
@@ -113,7 +105,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
-				<div class="palatino-text charcoal-text padding bib" style="text-indent:-25px">
+				<div class="tahoma-text charcoal-text padding bib" style="text-indent:-25px">
 					<p class="bib">
 					S. Srinivasan and <b>S. D. Pollard</b>, B. Norris, S. K. Das, S. Bhowmick, A Shared-Memory Algorithm for Updating Tree-Based Properties of Large Dynamic Networks, <i>IEEE Transactions on Big Data</i>, pp. 1–15, Sep 2018.
 						<a href="https://ieeexplore.ieee.org/document/8464249">[URL]</a>
@@ -130,7 +122,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
-				<div class="palatino-text charcoal-text padding bib" style="text-indent:-25px">
+				<div class="tahoma-text charcoal-text padding bib" style="text-indent:-25px">
 					<p class="bib">
 					<b>S. D. Pollard</b> and B. Norris, A Comparison of Parallel Graph Processing Implementations. In <i>IEEE International Conference on Cluster Computing</i> (CLUSTER), pp. 657–658, Honolulu, HI, USA, Sep 2017.
 						<a href="http://ieeexplore.ieee.org/document/8048999/">[URL]</a>
@@ -140,14 +132,21 @@
 				</div>
 			</div>
 		</div>
-		<div id="Talks" class="row mint">
+		<div id="Talks" class="row seafoam">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<p class="lucida-text flow-text black-text" style="font-size:24pt">// Talks and Presentations //</p>
 			</div>
 		</div>
 		<div class="container">
 			<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
-				<div class="palatino-text charcoal-text padding bib" style="text-indent:-25px">
+				<div class="tahoma-text charcoal-text padding bib" style="text-indent:-25px">
+					<p class="bib">
+						When Does a Bit Matter? Techniques When Does a Bit Matter? Techniques for Verifying the Correctness of Assembly Languages and Floating-Point Programs. Dissertation defense. Eugene, OR, USA, May 2021.
+						<i>[PDF] (TBD)</i>
+						<i >[Bib] (TBD)</i>
+						<i>[Slides] (TBD)</i>
+						<i>[YouTube] (TBD)</i>
+					</p>
 					<p class="bib">
 						Verification Techniques for Low-Level Programs.
 						My area exam literature review accepted as one of the requirements for advancement to candidacy. Eugene, OR, USA, Feb 2019.
