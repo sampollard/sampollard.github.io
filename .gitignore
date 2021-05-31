@@ -3,3 +3,6 @@
 .*.swp
 zola/public
 zola/static
+
+# OS
+.DS_Store

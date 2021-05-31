@@ -193,11 +193,11 @@
 .grape-text-shadow { text-shadow: 2px 2px #4a148c !important; }
 .grape-border { border-color: #4a148c !important; }
 .grape-outline { outline-color: #4a148c !important; }
-.eggplant { background-color: #752e82 !important; }
-.eggplant-text { color: #752e82 !important; }
-.eggplant-text-shadow { text-shadow: 2px 2px #752e82 !important; }
-.eggplant-border { border-color: #752e82  !important; }
-.eggplant-outline { outline-color: #752e82 !important; }
+.eggplant { background-color: #7b1fa2 !important; }
+.eggplant-text { color: #7b1fa2 !important; }
+.eggplant-text-shadow { text-shadow: 2px 2px #7b1fa2 !important; }
+.eggplant-border { border-color: #7b1fa2 !important; }
+.eggplant-outline { outline-color: #7b1fa2 !important; }
 .light-purple, .lavender { background-color: #D0A9F5 !important; }
 .light-purple-text, .lavender-text { color: #D0A9F5 !important; }
 .light-purple-text-shadow, .lavender-text-shadow { text-shadow: 2px 2px #D0A9F5 !important; }
@@ -213,11 +213,6 @@
 .lilac-text-shadow { text-shadow: 2px 2px #E3CEF6 !important; }
 .lilac-border { border-color: #E3CEF6 !important; }
 .lilac-outline { outline-color: #E3CEF6 !important; }
-.mauve { background-color: #8a2be2 !important; }
-.mauve-text { color: #8a2be2 !important; }
-.mauve-text-shadow { text-shadow: 2px 2px #8a2be2 !important; }
-.mauve-border { border-color: #8a2be2 !important; }
-.mauve-outline { outline-color: #8a2be2 !important; }
 
 /* Blues */
 .blue { background-color: #0000FF !important; }
@@ -349,15 +344,6 @@
 .mint-text-shadow { text-shadow: 2px 2px #a5d6a7 !important; }
 .mint-border { border-color: #a5d6a7 !important; }
 .mint-outline { outline-color: #a5d6a7 !important; }
-.seafoam { background-color: #d8f0d2 !important; }
-.seafoam-text { color: #d8f0d2 !important; }
-.seafoam-border { border-color: #d8f0d2 !important; }
-.seafoam-outline { outline-color: #d8f0d2 !important; }
-.seaweed { background-color: #2C4F29 !important; }
-.seaweed-text { color: #2C4F29 !important; }
-.seaweed-text-shadow { text-shadow: 2px 2px #2C4F29 !important; }
-.seaweed-border { border-color: #2C4F29 !important; }
-.seaweed-outline { outline-color: #2C4F29 !important; }
 .spinach { background-color: #1b5e20 !important; }
 .spinach-text { color: #1b5e20 !important; }
 .spinach-text-shadow { text-shadow: 2px 2px #1b5e20 !important; }
