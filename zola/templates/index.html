@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 	<div class="container-fluid no-padding">
-		<div class="row mint">
+		<div class="row">
 			<div class="col-sm-12 no-padding">
 				<div class="black padding home-head">
 					<div class="row">
-						<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+						<div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
 							<div class="flower-blue box-shadow-triple">
 								<img class="responsive logo" src="assets/images/me_france_1080.jpg" alt="Picture of Me"/>
 							</div>
@@ -15,12 +15,12 @@
 								<span class="mint-text black-text-shadow"><strong>Samuel D. Pollard</strong></span>
 							</h1>
 							<h4 class="center fittext-h4 tahoma-text heavy black-text-shadow mint-text">
-								Computer scientist at <span class="pool-water-text">Sandia National Laboratories</span>
+								Computer scientist at <a href="https://sandia.gov" class="pool-water-text">Sandia National Laboratories</span>
 							</h4>
 							<br>
-							<div class="pool-water box-shadow-padded padding">
+							<div class="seafoam box-shadow-padded padding">
 								<p class="black-text center verdana-text heavy">
-									I'm a senior member of technical staff, R&amp;D S&amp;E in formal verification. My research interests are formal methods and high-performance computing, specifically as they apply to floating-point arithmetic.
+									I'm a senior member of technical staff, R&amp;D S&amp;E cybersecurity. My work focuses on formal methods, especially as it applies to high-performance computing and floating-point arithmetic.
 								</p>
 							</div>
 						</div>
@@ -29,60 +29,56 @@
 			</div>
 		</div>
 
-		<div class="row center-sm seaweed">
-			<div class="col-sm-12 no-padding">
-				<h4 id="page-content" class="comic-sans-text center vanilla-bean-text">Main Links</h4>
+		<div class="row seafoam">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p class="lucida-text flow-text black-text" style="font-size:24pt">// Main Links //</p>
 			</div>
-			<div class="box" style="min-width: 85%">
-				<div class="col-sm-12 mint padding">
-					<h5 id="page-content" class="times-text center heavy white-text invert-hover"><a href="research">Research</a></h5>
+		</div>
+		<div class="row center-sm vanilla-bean">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding light-purple">
+				<h5 id="page-content" class="times-text center heavy white-text invert-hover"><a href="research">Research</a></h5>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding mauve">
+				<h5 id="page-content" class="impact-text center heavy white-text invert-hover"><a href="http://ix.cs.uoregon.edu/~spollard/cv_pollard.pdf">CV (PDF)</a></h5>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding light-purple">
+				<h5 id="page-content" class="lucida-text center heavy invert-hover"><a href="calendar">Calendar</a></h5>
+			</div>
+		<!-- Hidden for now until I figure out what to do with it
+			<div class="row light-purple">
+				<div class="col-sm-12 padding">
+					<h4 id="page-content" class="lucida-text center heavy invert-hover"><a href="blog">Blog</a></h4>
 				</div>
-				<div class="col-sm-12 padding flower-blue">
-					<h5 id="page-content" class="impact-text center heavy white-text invert-hover"><a href="http://ix.cs.uoregon.edu/~spollard/cv_pollard.pdf">CV (PDF)</a></h5>
-				</div>
-				<div class="row mint">
-					<div class="col-sm-12 padding">
-						<h5 id="page-content" class="lucida-text center heavy invert-hover"><a href="calendar">Calendar</a></h5>
-					</div>
-				</div>
-				<div class="col-sm-12 padding flower-blue">
-					<h5 id="page-content" class="georgia-text center invert-hover"><a href="http://ix.cs.uoregon.edu/~spollard">University of Oregon website</a></h5>
-				</div>
-			<!-- Hidden for now until I figure out what to do with it
-				<div class="row light-purple">
-					<div class="col-sm-12 padding">
-						<h4 id="page-content" class="lucida-text center heavy invert-hover"><a href="blog">Blog</a></h4>
-					</div>
-				</div>
-			-->
+			</div>
+		-->
+		</div>
+
+		<div class="row seafoam">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p class="lucida-text flow-text black-text" style="font-size:24pt">// Other Links //</p>
 			</div>
 		</div>
 
-		<div class="row center-sm seaweed">
-			<div class="col-sm-12 no-padding">
-				<h4 id="page-content" class="comic-sans-text center vanilla-bean-text">Other Links</h4>
-			</div>
-			<div class="box" style="min-width: 85%">
-				<div class="col-sm padding rust">
-					<p id="extra-links" class="center verdana-text" style="font-size:14pt">
-
-						<a href="https://github.com/sampollard" class="white-text invert-hover small-btn">Github</a>
-						|
-						<a href="https://twitter.com/samdpollard" class="white-text invert-hover small-btn">Twitter</a>
-						|
-						<a href="https://www.researchgate.net/profile/Samuel_Pollard3" class="white-text invert-hover small-btn">ResearchGate</a>
-						|
-						<a href="https://orcid.org/0000-0002-3275-4064" class="white-text invert-hover small-btn">ORCID</a>
-						|
-						<a href="https://scholar.google.com/citations?user=X0zJ484AAAAJ" class="white-text invert-hover small-btn">Google Scholar</a>
-						|
-						<a href="https://www.linkedin.com/in/sampollard/" class="white-text invert-hover small-btn">LinkedIn</a>
-						|
-						<a href="https://dblp.org/pers/p/Pollard:Samuel.html" class="white-text invert-hover small-btn">dblp</a>
-					</p>
-				</div>
+		<div class="row eggplant padding">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+				<p id="extra-links" class="verdana-text" style="font-size:14pt; max-width:80%; text-align:center; margin:0 auto;">
+					<a href="https://github.com/sampollard" class="white-text invert-hover small-btn">Github</a>
+					|
+					<a href="https://twitter.com/samdpollard" class="white-text invert-hover small-btn">Twitter</a>
+					|
+					<a href="https://www.researchgate.net/profile/Samuel_Pollard3" class="white-text invert-hover small-btn">ResearchGate</a>
+					|
+					<a href="https://orcid.org/0000-0002-3275-4064" class="white-text invert-hover small-btn">ORCID</a>
+					|
+					<a href="https://scholar.google.com/citations?user=X0zJ484AAAAJ" class="white-text invert-hover small-btn">Google Scholar</a>
+					|
+					<a href="https://www.linkedin.com/in/sampollard/" class="white-text invert-hover small-btn">LinkedIn</a>
+					|
+					<a href="https://dblp.org/pers/p/Pollard:Samuel.html" class="white-text invert-hover small-btn">dblp</a>
+					|
+					<a href="http://ix.cs.uoregon.edu/~spollard" class="white-text invert-hover small-btn">old&nbsp;page&nbsp;(UO)</a>
+				</p>
 			</div>
 		</div>
-
 	</div>
 {% endblock content %}
