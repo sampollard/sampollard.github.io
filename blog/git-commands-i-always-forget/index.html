@@ -84,41 +84,40 @@ So I just write them down here.</p>
 <ul>
 <li>
 <p>Pull from a remote branch</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">git checkout --track origin/remotebranch
-</span></code></pre></li>
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git checkout --track origin/remotebranch
+</span></code></pre>
+</li>
 <li>
 <p>Push to a remote branch</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">git push origin localbranch:remotebranch
-</span></code></pre></li>
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git push origin localbranch:remotebranch
+</span></code></pre>
+</li>
 <li>
 <p>Delete remote branch</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">git push origin --delete remotebranch
-</span></code></pre></li>
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git push origin --delete remotebranch
+</span></code></pre>
+</li>
 <li>
 <p>Delete a tag remotely</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">git push --delete origin 0.7.0
-</span></code></pre></li>
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git push --delete origin 0.7.0
+</span></code></pre>
+</li>
 <li>
 <p>In case you ever mess up and add too many files. Say, you added hundreds of
 binary files and push, so your repository is 10x the size it should be. Even
 if you remove the folder in the following commit, your repo will still have
 that history. You're rewriting the history books. You can do this with git
 alone, but it's way tougher.</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">git clone --mirror &lt;git URL&gt;
-</span><span style="color:#282828aa;"># Download BFG git cleanup, then run (version number changed, of course)
-</span><span style="color:#282828aa;">java -jar bfg-1.13.0.jar --delete-folders &lt;dirs to delete&gt;
-</span><span style="color:#282828aa;">cd repo.git
-</span><span style="color:#282828aa;">git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive
-</span><span style="color:#282828aa;"># Change so you can push to master on gitlab
-</span><span style="color:#282828aa;">git push
-</span><span style="color:#282828aa;"># IMPORTANT: You want to save the file object-id-map.old-new.txt in the
-</span><span style="color:#282828aa;"># bfg-report so everything gets updated, in say, gitlab. You can find
-</span><span style="color:#282828aa;"># a setting for cleanup under Settings -&gt; Repository -&gt; Cleanup
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git clone --mirror &lt;git URL&gt;
+</span><span># Download BFG git cleanup, then run (version number changed, of course)
+</span><span>java -jar bfg-1.13.0.jar --delete-folders &lt;dirs to delete&gt;
+</span><span>cd repo.git
+</span><span>git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive
+</span><span># Change so you can push to master on gitlab
+</span><span>git push
+</span><span># IMPORTANT: You want to save the file object-id-map.old-new.txt in the
+</span><span># bfg-report so everything gets updated, in say, gitlab. You can find
+</span><span># a setting for cleanup under Settings -&gt; Repository -&gt; Cleanup
 </span></code></pre>
 <p><a href="https://docs.gitlab.com/ee/user/project/repository/reducing_the_repo_size_using_git.html">here</a>
 is a doc that explains this for Gitlab.</p>

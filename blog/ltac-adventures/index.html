@@ -97,29 +97,28 @@ may take the form of relations of <code>Z</code>, <code>nat</code>, <code>N</cod
 dealing with bits needs bounds on the number of bits needed to represent a
 number; that way we know no overflow occurs, to name one case.</p>
 <p>For example, suppose you have the following</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">Ltac add_hyp_before_lia A :=
-  try match goal with
-    | [ p1 : positive, p2 : positive |- _ ] =&gt;
-        pose proof (A p1)
-      ; pose proof (A p2)
-  end;
-  lia.
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>Ltac add_hyp_before_lia A :=
+</span><span>  try match goal with
+</span><span>    | [ p1 : positive, p2 : positive |- _ ] =&gt;
+</span><span>        pose proof (A p1)
+</span><span>      ; pose proof (A p2)
+</span><span>  end;
+</span><span>  lia.
 </span></code></pre>
 <p>Do you spot the mistake? There is no semicolon <code>;</code> between the two <code>pose proof</code>s. This means the match tactic will always fail. But since we wrapped
 the whole match inside a <code>try</code>. But there will not be any indication that
 this tactic inside of <code>try</code> will <em>never</em> work.</p>
 <p>I figured this out by adding the following line:</p>
-<pre style="background-color:#fcf0ca;">
-<code><span style="color:#282828aa;">Ltac add_hyp_before_lia A :=
-  try match goal with
-    | [ p1 : positive, p2 : positive |- _ ] =&gt;
-	  idtac &quot;trying to add 2 hypotheses&quot;
-      pose proof (A p1)
-      pose proof (A p2)
-  end;
-  lia.
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>Ltac add_hyp_before_lia A :=
+</span><span>  try match goal with
+</span><span>    | [ p1 : positive, p2 : positive |- _ ] =&gt;
+</span><span>	  idtac &quot;trying to add 2 hypotheses&quot;
+</span><span>      pose proof (A p1)
+</span><span>      pose proof (A p2)
+</span><span>  end;
+</span><span>  lia.
 </span></code></pre>
+
 
 									<center>&#10086;</center>
 									<br>
