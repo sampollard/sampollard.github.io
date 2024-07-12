@@ -81,13 +81,13 @@
 do this for all combinations of floating point numbers? Well. Let's for now
 just consider finite arithmetic; that is, neither infinity nor NaN. In this
 case, all we need to do is define the smallest positive floating point number
-as &quot;1&quot;, and shift the decimal point accordingly. According to the IEEE-754
+as "1", and shift the decimal point accordingly. According to the IEEE-754
 standard, for double-precision this number is</p>
 <p>2<sup>-1074</sup></p>
 <p>which in binary looks like</p>
 <pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>0 00000000000 0000000000000000000000000000000000000000000000000001
 </span></code></pre>
-<p>To treat this as &quot;1&quot; we must also look at what the largest number is.
+<p>To treat this as "1" we must also look at what the largest number is.
 Checking IEEE-754, we have</p>
 <p>2<sup>1023</sup> × (1 + (1 − 2<sup>−52</sup>)), or in bits,</p>
 <pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>0 11111111110 1111111111111111111111111111111111111111111111111111
