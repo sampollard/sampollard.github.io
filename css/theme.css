@@ -3,6 +3,12 @@
  * Styles for setting a custom theme for your site
  ===================================================*/ 
 .logo { padding: 2em; }
+
+/* Email obfuscation via https://spencermortensen.com/articles/email-obfuscation/#text-display */
+span.email b {
+	display:none;
+}
+
 p { font-size: 1.1em }
 .home-head {
 	background: url('/assets/images/flowers.jpg');
