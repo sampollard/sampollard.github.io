@@ -13,21 +13,21 @@
 	<meta name="twitter:title" content="Samuel D. Pollard">
 	<meta name="twitter:description" content="Professional website for Samuel D. Pollard">
 	<!-- Twitter Summary card images must be at least 120x120px -->
-	<meta name="twitter:image" content="https://sampollard.github.io/assets/images/me_france_1080.jpg">
+	<meta name="twitter:image" content="https://sampollard.github.io/assets/images/sam_pollard.jpg">
 	<meta name="twitter:image:alt" content="A photo of Sam">
 
 	<!-- Open Graph data -->
 	<meta property="og:title" content="Samuel D. Pollard's website" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://sampollard.github.io" />
-	<meta property="og:image" content="https://sampollard.github.io/assets/images/me_france_1080.jpg" />
+	<meta property="og:image" content="https://sampollard.github.io/assets/images/sam_pollard.jpg" />
 	<meta property="og:description" content="Professional website for Samuel Pollard" />
 	<meta property="og:site_name" content="Samuel D. Pollard's website" />
 
 	<!-- Icons -->
-	<link rel="shortcut icon" href="/assets/images/mylogo.png" type="image/png" />
-	<link rel="icon" href="/assets/images/mylogo.png" type="image/png" />
-	<link rel="apple-touch-icon" href="/assets/images/mylogo.png" type="image/png" />
+	<link rel="shortcut icon" href="assets/images/mylogo.png" type="image/png" />
+	<link rel="icon" href="assets/images/mylogo.png" type="image/png" />
+	<link rel="apple-touch-icon" href="assets/images/mylogo.png" type="image/png" />
 
 	<!-- CSS  -->
 	<link href="/css/core/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -84,42 +84,33 @@ So I just write them down here.</p>
 <ul>
 <li>
 <p>Pull from a remote branch</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git checkout --track origin/remotebranch
-</span></code></pre>
-</li>
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>git checkout --track origin/remotebranch</span></span></code></pre></li>
 <li>
 <p>Push to a remote branch</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git push origin localbranch:remotebranch
-</span></code></pre>
-</li>
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>git push origin localbranch:remotebranch</span></span></code></pre></li>
 <li>
 <p>Delete remote branch</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git push origin --delete remotebranch
-</span></code></pre>
-</li>
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>git push origin --delete remotebranch</span></span></code></pre></li>
 <li>
 <p>Delete a tag remotely</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git push --delete origin 0.7.0
-</span></code></pre>
-</li>
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>git push --delete origin 0.7.0</span></span></code></pre></li>
 <li>
 <p>In case you ever mess up and add too many files. Say, you added hundreds of
 binary files and push, so your repository is 10x the size it should be. Even
 if you remove the folder in the following commit, your repo will still have
 that history. You're rewriting the history books. You can do this with git
 alone, but it's way tougher.</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>git clone --mirror &lt;git URL&gt;
-</span><span># Download BFG git cleanup, then run (version number changed, of course)
-</span><span>java -jar bfg-1.13.0.jar --delete-folders &lt;dirs to delete&gt;
-</span><span>cd repo.git
-</span><span>git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive
-</span><span># Change so you can push to master on gitlab
-</span><span>git push
-</span><span># IMPORTANT: You want to save the file object-id-map.old-new.txt in the
-</span><span># bfg-report so everything gets updated, in say, gitlab. You can find
-</span><span># a setting for cleanup under Settings -&gt; Repository -&gt; Cleanup
-</span></code></pre>
-<p><a href="https://docs.gitlab.com/ee/user/project/repository/reducing_the_repo_size_using_git.html">here</a>
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>git clone --mirror &lt;git URL&gt;</span></span>
+<span class="giallo-l"><span># Download BFG git cleanup, then run (version number changed, of course)</span></span>
+<span class="giallo-l"><span>java -jar bfg-1.13.0.jar --delete-folders &lt;dirs to delete&gt;</span></span>
+<span class="giallo-l"><span>cd repo.git</span></span>
+<span class="giallo-l"><span>git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive</span></span>
+<span class="giallo-l"><span># Change so you can push to master on gitlab</span></span>
+<span class="giallo-l"><span>git push</span></span>
+<span class="giallo-l"><span># IMPORTANT: You want to save the file object-id-map.old-new.txt in the</span></span>
+<span class="giallo-l"><span># bfg-report so everything gets updated, in say, gitlab. You can find</span></span>
+<span class="giallo-l"><span># a setting for cleanup under Settings -&gt; Repository -&gt; Cleanup</span></span></code></pre>
+<p><a rel="external" href="https://docs.gitlab.com/ee/user/project/repository/reducing_the_repo_size_using_git.html">here</a>
 is a doc that explains this for Gitlab.</p>
 </li>
 </ul>
@@ -145,9 +136,9 @@ is a doc that explains this for Gitlab.</p>
 			<div class="col-sm-12 no-padding">
 				<small>
 					<p class="center white-text lucida-text">
-							Website created using <a href="http://www.brutalistframework.com" class="water-text invert-hover">Brutalist Framework</a> and <a href="https://www.getzola.org" class="water-text invert-hover">Zola</a>.
+							Website created using <a href="https://www.brutalistframework.com" class="water-text invert-hover">Brutalist Framework</a> and <a href="https://www.getzola.org" class="water-text invert-hover">Zola</a>.
 						</p>
-					<p class="center white-text lucida-text">&copy; 2024 <em>Samuel D. Pollard</em>. Website design licensed under the MIT License. All rights reserved for images and text.</p>
+					<p class="center white-text lucida-text">&copy; 2026 <em>Samuel D. Pollard</em>. Website design licensed under the MIT License. All rights reserved for images and text.</p>
 				</small>
 			</div>
 		</div>

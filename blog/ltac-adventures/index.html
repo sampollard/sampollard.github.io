@@ -13,21 +13,21 @@
 	<meta name="twitter:title" content="Samuel D. Pollard">
 	<meta name="twitter:description" content="Professional website for Samuel D. Pollard">
 	<!-- Twitter Summary card images must be at least 120x120px -->
-	<meta name="twitter:image" content="https://sampollard.github.io/assets/images/me_france_1080.jpg">
+	<meta name="twitter:image" content="https://sampollard.github.io/assets/images/sam_pollard.jpg">
 	<meta name="twitter:image:alt" content="A photo of Sam">
 
 	<!-- Open Graph data -->
 	<meta property="og:title" content="Samuel D. Pollard's website" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://sampollard.github.io" />
-	<meta property="og:image" content="https://sampollard.github.io/assets/images/me_france_1080.jpg" />
+	<meta property="og:image" content="https://sampollard.github.io/assets/images/sam_pollard.jpg" />
 	<meta property="og:description" content="Professional website for Samuel Pollard" />
 	<meta property="og:site_name" content="Samuel D. Pollard's website" />
 
 	<!-- Icons -->
-	<link rel="shortcut icon" href="/assets/images/mylogo.png" type="image/png" />
-	<link rel="icon" href="/assets/images/mylogo.png" type="image/png" />
-	<link rel="apple-touch-icon" href="/assets/images/mylogo.png" type="image/png" />
+	<link rel="shortcut icon" href="assets/images/mylogo.png" type="image/png" />
+	<link rel="icon" href="assets/images/mylogo.png" type="image/png" />
+	<link rel="apple-touch-icon" href="assets/images/mylogo.png" type="image/png" />
 
 	<!-- CSS  -->
 	<link href="/css/core/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -81,7 +81,7 @@
 In some sense it's the polar opposite of Coq because of how little is
 typechecked.  Upon first blush, Ltac looks sort of like Gallina, but the
 semantics are very different. Here I'm just putting notes together for tips and
-tricks to manage learning it. If you're like me, then the <a href="https://coq.inria.fr/refman/proof-engine/ltac.html">Ltac reference
+tricks to manage learning it. If you're like me, then the <a rel="external" href="https://coq.inria.fr/refman/proof-engine/ltac.html">Ltac reference
 manual</a> causes more
 confusions than it clears up, so I'll be trying to post in more plain English.</p>
 <p>I'll start with my motivation for developing some proof automation, then go through
@@ -97,28 +97,25 @@ may take the form of relations of <code>Z</code>, <code>nat</code>, <code>N</cod
 dealing with bits needs bounds on the number of bits needed to represent a
 number; that way we know no overflow occurs, to name one case.</p>
 <p>For example, suppose you have the following</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>Ltac add_hyp_before_lia A :=
-</span><span>  try match goal with
-</span><span>    | [ p1 : positive, p2 : positive |- _ ] =&gt;
-</span><span>        pose proof (A p1)
-</span><span>      ; pose proof (A p2)
-</span><span>  end;
-</span><span>  lia.
-</span></code></pre>
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>Ltac add_hyp_before_lia A :=</span></span>
+<span class="giallo-l"><span>  try match goal with</span></span>
+<span class="giallo-l"><span>    | [ p1 : positive, p2 : positive |- _ ] =&gt;</span></span>
+<span class="giallo-l"><span>        pose proof (A p1)</span></span>
+<span class="giallo-l"><span>      ; pose proof (A p2)</span></span>
+<span class="giallo-l"><span>  end;</span></span>
+<span class="giallo-l"><span>  lia.</span></span></code></pre>
 <p>Do you spot the mistake? There is no semicolon <code>;</code> between the two <code>pose proof</code>s. This means the match tactic will always fail. But since we wrapped
 the whole match inside a <code>try</code>. But there will not be any indication that
 this tactic inside of <code>try</code> will <em>never</em> work.</p>
 <p>I figured this out by adding the following line:</p>
-<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>Ltac add_hyp_before_lia A :=
-</span><span>  try match goal with
-</span><span>    | [ p1 : positive, p2 : positive |- _ ] =&gt;
-</span><span>	  idtac &quot;trying to add 2 hypotheses&quot;
-</span><span>      pose proof (A p1)
-</span><span>      pose proof (A p2)
-</span><span>  end;
-</span><span>  lia.
-</span></code></pre>
-
+<pre class="giallo" style="color: #3C3836; background-color: #FBF1C7;"><code data-lang="plain"><span class="giallo-l"><span>Ltac add_hyp_before_lia A :=</span></span>
+<span class="giallo-l"><span>  try match goal with</span></span>
+<span class="giallo-l"><span>    | [ p1 : positive, p2 : positive |- _ ] =&gt;</span></span>
+<span class="giallo-l"><span>	  idtac &quot;trying to add 2 hypotheses&quot;</span></span>
+<span class="giallo-l"><span>      pose proof (A p1)</span></span>
+<span class="giallo-l"><span>      pose proof (A p2)</span></span>
+<span class="giallo-l"><span>  end;</span></span>
+<span class="giallo-l"><span>  lia.</span></span></code></pre>
 
 									<center>&#10086;</center>
 									<br>
@@ -140,9 +137,9 @@ this tactic inside of <code>try</code> will <em>never</em> work.</p>
 			<div class="col-sm-12 no-padding">
 				<small>
 					<p class="center white-text lucida-text">
-							Website created using <a href="http://www.brutalistframework.com" class="water-text invert-hover">Brutalist Framework</a> and <a href="https://www.getzola.org" class="water-text invert-hover">Zola</a>.
+							Website created using <a href="https://www.brutalistframework.com" class="water-text invert-hover">Brutalist Framework</a> and <a href="https://www.getzola.org" class="water-text invert-hover">Zola</a>.
 						</p>
-					<p class="center white-text lucida-text">&copy; 2024 <em>Samuel D. Pollard</em>. Website design licensed under the MIT License. All rights reserved for images and text.</p>
+					<p class="center white-text lucida-text">&copy; 2026 <em>Samuel D. Pollard</em>. Website design licensed under the MIT License. All rights reserved for images and text.</p>
 				</small>
 			</div>
 		</div>
